@@ -1,7 +1,6 @@
 package com.immobilisation.controller;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
 import com.immobilisation.model.Immobilisation;
 import com.immobilisation.repository.ImmobilisationRepository;
@@ -16,13 +15,13 @@ public class ImmobilisationController {
         this.immobilisationRepository = immobilisationRepository;
     }
 
-    @PostMapping("/save")
+    @PostMapping("")
     public Immobilisation save(@RequestBody Immobilisation immobilisation) {
         immobilisationRepository.save(immobilisation);
         return immobilisation;
     }
 
-    @GetMapping()
+    @GetMapping("")
     public List<Immobilisation> findAll() {
         return immobilisationRepository.findAll();
     }
