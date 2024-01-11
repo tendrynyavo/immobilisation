@@ -1,8 +1,6 @@
 package com.immobilisation.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.springframework.http.ResponseEntity;
+import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,15 +24,8 @@ public class ImmobilisationController {
     }
 
     @GetMapping("/immobilisations")
-    public ResponseEntity<Object> findAll() {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            map.put("immobilisations", immobilisationRepository.findAll());
-            return ResponseEntity.ok(map);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public List<Immobilisation> findAll() {
+        return immobilisationRepository.findAll();
     }
 
 }
