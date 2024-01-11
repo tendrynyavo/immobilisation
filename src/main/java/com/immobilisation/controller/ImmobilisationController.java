@@ -7,11 +7,11 @@ import com.immobilisation.model.Immobilisation;
 import com.immobilisation.repository.ImmobilisationRepository;
 
 @RestController
-public class ImmibolisationController {
+public class ImmobilisationController {
     
     public final ImmobilisationRepository immobilisationRepository;
 
-    public ImmibolisationController(ImmobilisationRepository immobilisationRepository) {
+    public ImmobilisationController(ImmobilisationRepository immobilisationRepository) {
         this.immobilisationRepository = immobilisationRepository;
     }
 
