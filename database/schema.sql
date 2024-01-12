@@ -5,19 +5,19 @@ CREATE TABLE immobilisation(
 );
 
 CREATE TABLE Fournisseur(
-   id_fournisseur VARCHAR(50) ,
+   id_fournisseur serial ,
    nom VARCHAR(50) ,
    PRIMARY KEY(id_fournisseur)
 );
 
 CREATE TABLE Livreur(
-   id_livreur VARCHAR(50) ,
+   id_livreur serial ,
    nom VARCHAR(100) ,
    PRIMARY KEY(id_livreur)
 );
 
 CREATE TABLE marque(
-   id_marque VARCHAR(50) ,
+   id_marque serial ,
    nom VARCHAR(50) ,
    PRIMARY KEY(id_marque)
 );
@@ -41,7 +41,7 @@ CREATE TABLE proces_verbal_reception(
 );
 
 CREATE TABLE proces_verbal_utilisation(
-   id_utilisation VARCHAR(50) ,
+   id_utilisation serial ,
    date_utilisation DATE,
    id_proces INTEGER NOT NULL,
    PRIMARY KEY(id_utilisation),

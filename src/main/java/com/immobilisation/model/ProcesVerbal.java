@@ -3,6 +3,8 @@ package com.immobilisation.model;
 import java.sql.Date;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 public class ProcesVerbal {
     
@@ -12,8 +14,16 @@ public class ProcesVerbal {
     Date date;
     int etat;
     double valeur;
+
+    @ManyToOne
+    @JoinColumn(name = "id_fournisseur")
     Fournisseur fournisseur;
+
+    @ManyToOne
+    @JoinColumn(name = "id_livreur")
     Livreur livreur;
+    @ManyToOne
+    @JoinColumn(name = "id_marque")
     Marque marque;
 
     public String getId() {

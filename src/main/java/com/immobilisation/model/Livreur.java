@@ -1,18 +1,21 @@
 package com.immobilisation.model;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 
+@Entity
 public class Livreur {
 
+    @Id
     @Column(name = "id_livreur")
-    String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
     String nom;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
