@@ -15,13 +15,13 @@ public class ImmobilisationController {
         this.immobilisationRepository = immobilisationRepository;
     }
 
-    @PostMapping("")
+    @PostMapping
     public Immobilisation save(@RequestBody Immobilisation immobilisation) {
         immobilisationRepository.save(immobilisation);
         return immobilisation;
     }
 
-    @GetMapping("")
+    @GetMapping
     public List<Immobilisation> findAll() {
         return immobilisationRepository.findAll();
     }
