@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Marque {
     @Id
-    @Column(name = "id_livreur")
+    @Column(name = "id_marque")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String nom;

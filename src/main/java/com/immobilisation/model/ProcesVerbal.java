@@ -2,15 +2,17 @@ package com.immobilisation.model;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "proces_verbal_reception")
 public class ProcesVerbal {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_proces")
-    String id;
+    int id;
     String designation;
+    @Column(name = "date_reception")
     Date date;
     int etat;
     double valeur;
@@ -20,18 +22,40 @@ public class ProcesVerbal {
     Fournisseur fournisseur;
 
     @ManyToOne
+    @JoinColumn(name = "id_immobilisation")
+    Immobilisation immobilisation;
+    @ManyToOne
     @JoinColumn(name = "id_livreur")
     Livreur livreur;
     @ManyToOne
     @JoinColumn(name = "id_marque")
     Marque marque;
 
-    public String getId() {
+
+
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public Immobilisation getImmobilisation() {
+        return immobilisation;
+    }
+
+    public void setImmobilisation(Immobilisation immobilisation) {
+        this.immobilisation = immobilisation;
     }
 
     public Date getDate() {
@@ -58,14 +82,27 @@ public class ProcesVerbal {
         this.valeur = valeur;
     }
 
-    public String getDesignation() {
-        return designation;
+    public Fournisseur getFournisseur() {
+        return fournisseur;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public void setFournisseur(Fournisseur fournisseur) {
+        this.fournisseur = fournisseur;
     }
-    
 
+    public Livreur getLivreur() {
+        return livreur;
+    }
 
+    public void setLivreur(Livreur livreur) {
+        this.livreur = livreur;
+    }
+
+    public Marque getMarque() {
+        return marque;
+    }
+
+    public void setMarque(Marque marque) {
+        this.marque = marque;
+    }
 }
