@@ -7,6 +7,7 @@ import com.immobilisation.repository.ImmobilisationRepository;
 
 @RestController
 @RequestMapping("/immobilisations")
+@CrossOrigin(origins = "*")
 public class ImmobilisationController {
     
     public final ImmobilisationRepository immobilisationRepository;
